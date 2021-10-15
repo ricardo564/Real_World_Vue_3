@@ -12,7 +12,7 @@
       </router-link>
     </div>
     <div class="col-2 m-1 ">
-      <EventPromo :id="event.id" />
+      <EventPromo :id="event.id" :organizer="event.organizer" />
     </div> 
   </div>
 </template>
