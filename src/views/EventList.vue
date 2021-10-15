@@ -3,6 +3,7 @@
   <div class="events">
     <EventCard v-for="event in event.events" :key="event.id" :event="event" />
   </div>
+  
 </template>
 
 <script>
@@ -12,7 +13,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'EventList',
   components: {
-    EventCard,
+    EventCard
   },
   created() {
     this.fetchEvents()

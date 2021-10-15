@@ -1,16 +1,30 @@
 <template>
-  <router-link
-    class="event-link"
-   :to="{ name: 'EventDetails', params: { id: event.id } }">
-    <div class="event-card">
-      <span>@{{ event.time }} on {{ event.date }}</span>
-      <h4>{{ event.title }}</h4>
+  <div class="col-4 m-1 grid">
+    <div class="col-9">
+      <router-link
+      :to="{ name: 'EventDetails', params: { id: event.id } }">
+        <Card>
+          <template #title>{{ event.title }}</template>
+          <template #content>
+            <span>@{{ event.time }} on {{ event.date }}</span>
+          </template>
+        </Card>
+      </router-link>
     </div>
-  </router-link>
+    <div class="col-2 m-1 ">
+      <EventPromo :id="event.id" />
+    </div> 
+  </div>
 </template>
 
 <script>
+import Card from "primevue/card";
+import EventPromo from '@/components/EventPromo.vue'
 export default {
+  components: { 
+    Card,
+    EventPromo
+  },
   props: {
     event: {
       type: Object,

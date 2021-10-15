@@ -95,6 +95,7 @@ export default {
         date: '',
         time: '',
         organizer: this.$store.state.user,
+        popularity: null,
       },
     }
   },
