@@ -1,0 +1,124 @@
+{
+  "events": [
+    {
+      "id": 123,
+      "category": "animal welfare",
+      "title": "Cat Adoption Day",
+      "description": "Find your new feline friend at this event.",
+      "location": "Meow Town",
+      "date": "January 28, 2022",
+      "time": "12:00",
+      "organizer": "Kat Laydee"
+    },
+    {
+      "id": 456,
+      "category": "food",
+      "title": "Community Gardening",
+      "description": "Join us as we tend to the community edible plants.",
+      "location": "Flora City",
+      "date": "March 14, 2022",
+      "time": "10:00",
+      "organizer": "Fern Pollin"
+    },
+    {
+      "id": 789,
+      "category": "sustainability",
+      "title": "Beach Cleanup",
+      "description": "Help pick up trash along the shore.",
+      "location": "Playa Del Carmen",
+      "date": "July 22, 2022",
+      "time": "11:00",
+      "organizer": "Carey Wales"
+    },
+    {
+      "category": "education",
+      "title": "Cobaia 01",
+      "description": "Apresenta sintomas de insonia.",
+      "location": "Perto daAgua",
+      "date": "Toda sexta",
+      "time": "Ao entardecer",
+      "organizer": "Camillus",
+      "id": 790
+    },
+    {
+      "category": "",
+      "title": "Cobaia 02",
+      "description": "Impulso para gritar",
+      "location": "Em locais publicos",
+      "date": "Todos os dias",
+      "time": "A cada 1 hora",
+      "organizer": "Camillus",
+      "id": 791
+    },
+    {
+      "category": "housing",
+      "title": "Cobaia 04",
+      "description": "Coceira no braço, perdeu o braço a 8 abos.",
+      "location": "Perto de estatuas",
+      "date": "Todos os dias.",
+      "time": "Sem hora .",
+      "organizer": "Camillus",
+      "id": 792
+    },
+    {
+      "category": "housing",
+      "title": "Cobaia 04",
+      "description": "Coceira no braço, perdeu o braço a 8 abos.",
+      "location": "Perto de estatuas",
+      "date": "Todos os dias.",
+      "time": "Sem hora .",
+      "organizer": "Camillus",
+      "id": 793
+    },
+    {
+      "category": "community",
+      "title": "Cobaia 05",
+      "description": "Não consegue se manter acordada.",
+      "location": "Em todos os lugares",
+      "date": "Todos os dias",
+      "time": "Enquanto o Sol está no céu",
+      "organizer": "Camillus",
+      "id": 794
+    },
+    {
+      "category": "animal welfare",
+      "title": "Cobaia07",
+      "description": "teste",
+      "location": "teste",
+      "date": "teste",
+      "time": "teste",
+      "organizer": "Camillus",
+      "id": 795
+    },
+    {
+      "category": "housing",
+      "title": "Cobaia 08",
+      "description": "teste",
+      "location": "teste",
+      "date": "teste",
+      "time": "teste",
+      "organizer": "Camillus",
+      "id": 796
+    },
+    {
+      "id": "3b377d95-1b39-4002-a109-d93c58938b22",
+      "category": "education",
+      "title": "Cobaia 08",
+      "description": "Escreve com palavras faltando.",
+      "location": "Em qualquer lugar que precise escrever",
+      "date": "todos os dias",
+      "time": "Sempre que quer se expressar",
+      "organizer": "Camillus"
+    },
+    {
+      "id": "ee7666cc-14f9-4957-bc81-ae2b4fc5265e",
+      "category": "community",
+      "title": "Cobaia 09",
+      "description": "Impaciente",
+      "location": "Em todos os lugares",
+      "date": "",
+      "time": "",
+      "organizer": "Camillus"
+    }
+  ]
+}
