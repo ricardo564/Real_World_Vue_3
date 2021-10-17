@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "id": 123,
+      "id": "123",
       "category": "animal welfare",
       "title": "Cat Adoption Day",
       "description": "Find your new feline friend at this event.",
@@ -11,7 +11,7 @@
       "organizer": "Kat Laydee"
     },
     {
-      "id": 456,
+      "id": "456",
       "category": "food",
       "title": "Community Gardening",
       "description": "Join us as we tend to the community edible plants.",
@@ -21,7 +21,7 @@
       "organizer": "Fern Pollin"
     },
     {
-      "id": 789,
+      "id": "789",
       "category": "sustainability",
       "title": "Beach Cleanup",
       "description": "Help pick up trash along the shore.",
@@ -38,7 +38,7 @@
       "date": "Toda sexta",
       "time": "Ao entardecer",
       "organizer": "Camillus",
-      "id": 790
+      "id": "790"
     },
     {
       "category": "",
@@ -48,7 +48,7 @@
       "date": "Todos os dias",
       "time": "A cada 1 hora",
       "organizer": "Camillus",
-      "id": 791
+      "id": "791"
     },
     {
       "category": "housing",
@@ -58,7 +58,7 @@
       "date": "Todos os dias.",
       "time": "Sem hora .",
       "organizer": "Camillus",
-      "id": 792
+      "id": "792"
     },
     {
       "category": "housing",
@@ -68,7 +68,7 @@
       "date": "Todos os dias.",
       "time": "Sem hora .",
       "organizer": "Camillus",
-      "id": 793
+      "id": "793"
     },
     {
       "category": "community",
@@ -78,7 +78,7 @@
       "date": "Todos os dias",
       "time": "Enquanto o Sol está no céu",
       "organizer": "Camillus",
-      "id": 794
+      "id": "794"
     },
     {
       "category": "animal welfare",
@@ -88,7 +88,7 @@
       "date": "teste",
       "time": "teste",
       "organizer": "Camillus",
-      "id": 795
+      "id": "795"
     },
     {
       "category": "housing",
@@ -98,7 +98,7 @@
       "date": "teste",
       "time": "teste",
       "organizer": "Camillus",
-      "id": 796
+      "id": "796"
     },
     {
       "id": "3b377d95-1b39-4002-a109-d93c58938b22",
@@ -111,14 +111,15 @@
       "organizer": "Camillus"
     },
     {
-      "id": "ee7666cc-14f9-4957-bc81-ae2b4fc5265e",
+      "id": "a3336b99-88cd-445b-bb04-171473932e1c",
       "category": "community",
-      "title": "Cobaia 09",
-      "description": "Impaciente",
-      "location": "Em todos os lugares",
-      "date": "",
-      "time": "",
-      "organizer": "Camillus"
+      "title": "Decordar a Casa",
+      "description": "Decorar tematicamente a casa antes da festa",
+      "location": "Casa",
+      "date": "Na Virada de Ano",
+      "time": "19  horas",
+      "organizer": "Camillus",
+      "popularity": null
     }
   ]
 }

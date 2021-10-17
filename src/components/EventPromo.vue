@@ -1,8 +1,10 @@
 <template>
     <div>
-        <Button v-on:click="vote" >
-            {{counter}}<i class="pi pi-star"> Cool!</i> 
-        </Button>
+        <div class="m-1">
+            <Button v-on:click="vote()" >
+                <i class="pi pi-star mt-1"> Cool!</i> 
+            </Button>
+        </div>
     </div>
 </template>
 
@@ -34,7 +36,7 @@ export default {
     },
     methods: {
         vote(){
-            counter++
+            this.counter++
         }
     }
 }

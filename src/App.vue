@@ -1,18 +1,30 @@
 <template>
-  <div id="app">
-    <router-link :to="{ name: 'EventList'}">
-      Events
-    </router-link> |
-    <router-link :to="{ name: 'About'}">
-      About
-    </router-link> |
-    <router-link :to="{ name: 'EventCreate'}">
-      Event Create
-    </router-link>
-  </div>
+  <div class=" grid justify-content-center">
+    <TabMenu :model="items"/>
 
+  </div>
   <router-view />
 </template>
+
+<script>
+  import TabMenu from 'primevue/tabmenu';
+
+export default {
+  data() {
+    return {
+      items: [
+        {label: 'Events', icon:'pi pi-fw pi-home', to:'/'},
+        {label: 'About', icon:'pi pi-fw pi-file', to:'/about'},
+        {label: 'Event Create', icon:'pi pi-fw pi-calendar', to:'/event/create'},
+      ]
+    }
+  },
+  components: {
+    TabMenu,
+  }
+}
+</script>
+
 
 <style>
 #app {
