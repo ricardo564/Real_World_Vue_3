@@ -22,9 +22,8 @@ export default {
     },
     actions: {
         voteEvent({commit,  state}, id){
-            const eVote = state.events.find(event => event.id == id)
+            const eVote = state.events.find(event => event.id === id)
             commit('VOTE_EVENT', eVote)
-            console.log(eVote)
             return EventService.putEvent(id, eVote)
         },
         createEvent({ commit }, event) {

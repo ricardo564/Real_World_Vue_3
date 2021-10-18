@@ -1,10 +1,10 @@
 <template>
   <h1>Create an event</h1>
-  <div class="card formgrid grid text-align-start justify-content-center">
+  <div>
     <form @submit.prevent="onSubmit">
-      <div class="field col-12">
+      <div>
         <label>Select a categoy: </label>
-        <select class="inputfield w-full" v-model="event.category">
+        <select v-model="event.category">
           <option
             v-for="option in categories"
             :value="option"
@@ -16,21 +16,19 @@
         </select>
       </div>
 
-      <div class="field col-12">
+      <div>
         <h3>Name & describe your event</h3>
         <label>Title</label>
         <input
-          class="inputfield w-full"
           v-model="event.title"
           type="text"
           placeholder="Title"
         />
       </div>
 
-      <div class="field col-12">
+      <div >
         <label>Description</label>
         <textarea
-          class="inputfield w-full"
           v-model="event.description"
           type="text"
           placeholder="Description"
@@ -38,27 +36,25 @@
         />
       </div>
 
-      <div class="field col-12">
+      <div>
         <h3>Where is your event?</h3>
 
         <label>Location</label>
         <input
-          class="inputfield w-full"
           v-model="event.location"
           type="text"
           placeholder="Location"
         />
       </div>
 
-      <div class="field col-12">
+      <div>
         <label>Date</label>
-        <input class="inputfield w-full" v-model="event.date" type="text" />
+        <input v-model="event.date" type="text" />
       </div>
 
-      <div class="field col-12">
+      <div>
         <label>Time</label>
         <input
-          class="inputfield w-full"
           v-model="event.time"
           type="text"
           placeholder="Time"

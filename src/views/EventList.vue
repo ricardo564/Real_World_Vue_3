@@ -1,9 +1,10 @@
 <template>
-  <h1>Events for {{ user.userInfo.name }}</h1>
-  <div class="events">
-    <EventCard v-for="event in oEvent" :key="event.id" :event="event" />
-  </div>
-  
+    <div class="grid col-12 justify-content-center"> 
+      <h1>Events for {{ user.userInfo.name }}</h1>
+    </div>
+    <div>
+      <EventCard v-for="event in oEvent" :key="event.id" :event="event" />
+    </div>
 </template>
 
 <script>
@@ -39,11 +40,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>

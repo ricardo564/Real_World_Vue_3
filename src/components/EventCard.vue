@@ -1,15 +1,9 @@
 <template>
-  <div class="
-        md:col-7 
-        lg:col-3
-        m-1 grid 
-        grid-nogutter 
-        "
-        @mouseover="hover = true" 
+  <div class="grid grid-nogutter" @mouseover="hover = true" 
         @mouseleave="hover = false"
         :class="{ 'bg-primary' : hover }"
   >
-    <div class="col-9 md:col-10 lg:col-9">
+    <div class="col-9 m-1">
       <router-link class="no-underline"
       :to="{ name: 'EventDetails', params: { id: event.id } }">
         <Card>
@@ -20,7 +14,7 @@
         </Card>
       </router-link>
     </div>
-    <div class="col-1 col-1 m-1 lg:col-2">
+    <div class="col-1">
       <EventPromo :ePopularity="event.popularity"  @click="voteEvent(event.id)"/>
     </div> 
   </div>

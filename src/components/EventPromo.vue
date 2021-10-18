@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="m-1">
+    <div>
       <Button @click='handleClick'>
         {{ ePopularity }} <i class="pi pi-star mt-1"> </i>
       </Button>
