@@ -5,6 +5,6 @@ import event from './modules/event.js'
 export default createStore({
   modules: { 
     user,
-    event
+    event,
   },
 });

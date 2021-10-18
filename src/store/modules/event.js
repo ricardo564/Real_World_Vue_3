@@ -4,7 +4,8 @@ export default {
     namespaced: true,
     state: {
         events: [],
-        currentEvent: {}
+        currentEvent: {},
+        popularity: null
     },
     mutations: {
         ADD_EVENT(state, event) {
@@ -15,6 +16,9 @@ export default {
         },
         SET_EVENTS(state, events) {
             state.events = events
+        },
+        VOTE_EVENT(state, event) {
+            state.popularity = event
         }
     },
     actions: {
@@ -26,6 +30,10 @@ export default {
             .catch(error => {
                 throw(error)
             })
+        },
+        voteEvent({commit, state}, id) {
+            const vote = state.events.find(event => event.id === id)
+            commit('VOTE_EVENT', vote)
         },
         fetchEvents({ commit }) {
             return EventService.getEvents()
@@ -49,7 +57,7 @@ export default {
                             throw(error)
                         })
                 }
-         }
+        }
     }
 }
 

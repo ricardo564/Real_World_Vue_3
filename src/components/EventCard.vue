@@ -1,6 +1,6 @@
 <template>
   <div class="
-        md:col-6
+        md:col-7 
         lg:col-3
         m-1 grid 
         grid-nogutter 
@@ -9,7 +9,7 @@
         @mouseleave="hover = false"
         :class="{ 'bg-primary' : hover }"
   >
-    <div class="col-9 md:col-10">
+    <div class="col-9 md:col-10 lg:col-9">
       <router-link class="no-underline"
       :to="{ name: 'EventDetails', params: { id: event.id } }">
         <Card>
@@ -17,11 +17,14 @@
           <template #content>
             <span>@{{ event.time }} on {{ event.date }}</span>
           </template>
+          <template #footer class="p-card-footer">
+            <p>Popularidade: {{ $store.popularity }}</p>
+          </template>
         </Card>
       </router-link>
     </div>
-    <div class="col-1 col-1 m-1 ">
-      <EventPromo :id="event.id" :organizer="event.organizer" />
+    <div class="col-1 col-1 m-1 lg:col-2">
+      <EventPromo :popularity="event.popularity" :organizer="event.organizer" />
     </div> 
   </div>
 </template>
@@ -34,6 +37,9 @@ export default {
     return {
       hover: false,
     }
+  },
+  methods:{
+    
   },
   components: { 
     Card,

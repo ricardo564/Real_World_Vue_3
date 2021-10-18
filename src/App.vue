@@ -1,7 +1,6 @@
 <template>
-  <div class=" grid justify-content-center">
+  <div class=" grid justify-content-center p-tabmenu">
     <TabMenu :model="items"/>
-
   </div>
   <router-view />
 </template>
