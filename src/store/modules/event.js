@@ -5,7 +5,6 @@ export default {
     state: {
         events: [],
         currentEvent: {},
-        popularity: null
     },
     mutations: {
         ADD_EVENT(state, event) {
@@ -18,10 +17,16 @@ export default {
             state.events = events
         },
         VOTE_EVENT(state, event) {
-            state.popularity = event
+            event.popularity += 1
         }
     },
     actions: {
+        voteEvent({commit,  state}, id){
+            const eVote = state.events.find(event => event.id == id)
+            commit('VOTE_EVENT', eVote)
+            console.log(eVote)
+            return EventService.putEvent(id, eVote)
+        },
         createEvent({ commit }, event) {
             return EventService.postEvent(event)
             .then(() => {
@@ -30,10 +35,6 @@ export default {
             .catch(error => {
                 throw(error)
             })
-        },
-        voteEvent({commit, state}, id) {
-            const vote = state.events.find(event => event.id === id)
-            commit('VOTE_EVENT', vote)
         },
         fetchEvents({ commit }) {
             return EventService.getEvents()

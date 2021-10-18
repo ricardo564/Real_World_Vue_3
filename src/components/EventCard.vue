@@ -17,14 +17,11 @@
           <template #content>
             <span>@{{ event.time }} on {{ event.date }}</span>
           </template>
-          <template #footer class="p-card-footer">
-            <p>Popularidade: {{ $store.popularity }}</p>
-          </template>
         </Card>
       </router-link>
     </div>
     <div class="col-1 col-1 m-1 lg:col-2">
-      <EventPromo :popularity="event.popularity" :organizer="event.organizer" />
+      <EventPromo :ePopularity="event.popularity"  @click="voteEvent(event.id)"/>
     </div> 
   </div>
 </template>
@@ -32,6 +29,7 @@
 <script>
 import Card from "primevue/card";
 import EventPromo from '@/components/EventPromo.vue'
+import { mapActions } from "vuex"
 export default {
   data(){
     return {
@@ -39,7 +37,7 @@ export default {
     }
   },
   methods:{
-    
+    ...mapActions('event', ['voteEvent'])
   },
   components: { 
     Card,

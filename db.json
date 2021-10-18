@@ -9,7 +9,7 @@
       "date": "January 28, 2022",
       "time": "12:00",
       "organizer": "Kat Laydee",
-      "popularity": 10
+      "popularity": 50
     },
     {
       "id": "456",
@@ -20,7 +20,7 @@
       "date": "March 14, 2022",
       "time": "10:00",
       "organizer": "Fern Pollin",
-      "popularity": 2
+      "popularity": 46
     },
     {
       "id": "789",
@@ -30,7 +30,8 @@
       "location": "Playa Del Carmen",
       "date": "July 22, 2022",
       "time": "11:00",
-      "organizer": "Carey Wales"
+      "organizer": "Carey Wales",
+      "popularity": 45
     },
     {
       "category": "education",
@@ -40,7 +41,8 @@
       "date": "Toda sexta",
       "time": "Ao entardecer",
       "organizer": "Camillus",
-      "id": "790"
+      "id": "790",
+      "popularity": 45
     },
     {
       "category": "",
@@ -50,7 +52,8 @@
       "date": "Todos os dias",
       "time": "A cada 1 hora",
       "organizer": "Camillus",
-      "id": "791"
+      "id": "791",
+      "popularity": 9
     },
     {
       "category": "housing",
@@ -60,7 +63,8 @@
       "date": "Todos os dias.",
       "time": "Sem hora .",
       "organizer": "Camillus",
-      "id": "792"
+      "id": "792",
+      "popularity": 1
     },
     {
       "category": "housing",
@@ -70,7 +74,8 @@
       "date": "Todos os dias.",
       "time": "Sem hora .",
       "organizer": "Camillus",
-      "id": "793"
+      "id": "793",
+      "popularity": 1
     },
     {
       "category": "community",
@@ -80,7 +85,8 @@
       "date": "Todos os dias",
       "time": "Enquanto o Sol está no céu",
       "organizer": "Camillus",
-      "id": "794"
+      "id": "794",
+      "popularity": 1
     },
     {
       "category": "animal welfare",
@@ -90,7 +96,8 @@
       "date": "teste",
       "time": "teste",
       "organizer": "Camillus",
-      "id": "795"
+      "id": "795",
+      "popularity": 1
     },
     {
       "category": "housing",
@@ -100,7 +107,8 @@
       "date": "teste",
       "time": "teste",
       "organizer": "Camillus",
-      "id": "796"
+      "id": "796",
+      "popularity": 1
     },
     {
       "id": "3b377d95-1b39-4002-a109-d93c58938b22",
@@ -110,7 +118,8 @@
       "location": "Em qualquer lugar que precise escrever",
       "date": "todos os dias",
       "time": "Sempre que quer se expressar",
-      "organizer": "Camillus"
+      "organizer": "Camillus",
+      "popularity": 0
     },
     {
       "id": "a3336b99-88cd-445b-bb04-171473932e1c",
@@ -121,7 +130,7 @@
       "date": "Na Virada de Ano",
       "time": "19  horas",
       "organizer": "Camillus",
-      "popularity": 5
+      "popularity": 8
     }
   ]
 }

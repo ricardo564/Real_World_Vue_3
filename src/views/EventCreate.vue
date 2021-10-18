@@ -95,7 +95,7 @@ export default {
         date: null,
         time: null,
         organizer: this.$store.state.user,
-        popularity: null,
+        popularity: 0,
       },
     }
   },
@@ -105,7 +105,7 @@ export default {
       const event = {
         ...this.event,
         id: uuidv4(),
-        organizer: this.user.userInfo.name
+        organizer: this.user.userInfo.name,
       }
       this.createEvent(event)
         .then(() => {
@@ -114,16 +114,16 @@ export default {
             params: { id: event.id },
           })
         })
-        .catch( error => {
+        .catch((error) => {
           this.$router.push({
             name: 'ErrorDisplay',
-            params: { error: error}
+            params: { error: error },
           })
         })
     },
   },
   computed: {
-    ...mapState(['user'])
+    ...mapState(['user']),
   },
 }
 </script>
