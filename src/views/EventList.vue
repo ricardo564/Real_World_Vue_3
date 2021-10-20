@@ -1,9 +1,12 @@
 <template>
-    <div class="grid col-12 justify-content-center"> 
-      <h1>Events for {{ user.userInfo.name }}</h1>
-    </div>
     <div>
-      <EventCard v-for="event in oEvent" :key="event.id" :event="event" />
+      <div class="grid col-12 justify-content-center"> 
+        <p>Getter Test: {{ eGetter }} </p>
+        <h1>Events for {{ user.userInfo.name }}</h1>
+      </div>
+      <div>
+        <EventCard v-for="event in oEvent" :key="event.id" :event="event" />
+      </div>
     </div>
 </template>
 
@@ -32,6 +35,10 @@ export default {
       return eOrdered.sort((a, b) => {
         return +(a.popularity < b.popularity) || +(a.popularity === b.popularity ) -1;
       })
+    },
+    eGetter() {
+      console.log(this.$store)
+      return this.$store.getters['user/listTodos']
     }
   },
   methods: {

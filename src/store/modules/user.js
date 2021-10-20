@@ -6,5 +6,10 @@ export default {
             id:'abc123',
             name: 'Camillus'
         }
-    }
+    },
+    getters: {
+        listTodos (state) {
+            return state.userInfo.name;
+        },
+    },
 }

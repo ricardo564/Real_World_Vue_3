@@ -26,9 +26,16 @@ export default {
   computed: mapState([
     'popularity'
   ]),
+  watch: {
+    ePopularity: 'someActions',
+  },
   methods: {
+    someActions() {
+      console.log('someActions watch')
+    },
     handleClick(){
       this.$emit('click')
+      console.log(this.ePopularity)
     }
   },
   components: {
