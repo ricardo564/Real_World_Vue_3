@@ -1,11 +1,22 @@
 <template>
-    <div v-if="event.currentEvent">
-        <h1>{{ event.currentEvent.title }}</h1>
-        <p> {{ event.currentEvent.time }} on {{ event.currentEvent.date }} 
-            @ {{ event.currentEvent.location }}</p>
-        <p>{{event.currentEvent.description }}</p>
-    </div>
-    <childCard>Hello from Parent</childCard>
+    <childCard>
+        <template #title>
+            <h1>{{ event.currentEvent.title }}</h1>
+        </template>
+        
+        <template #content>
+            <p>{{event.currentEvent.description }}</p>
+        </template>
+        <template #footer>
+            <div>
+                <span>{{ event.currentEvent.time }} </span>
+                <span>on {{ event.currentEvent.date }} </span>
+                <span>
+                    @ {{ event.currentEvent.location }}
+                </span>
+            </div>
+        </template>
+    </childCard>
 </template>
 
 

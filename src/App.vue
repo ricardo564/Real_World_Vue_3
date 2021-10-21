@@ -1,5 +1,5 @@
 <template>
-  <div class="grid justify-content-center">
+  <div class="grid justify-content-center m-1">
       <TabMenu :model="items"/>
   </div>
   <router-view />
@@ -7,6 +7,11 @@
 
 <script>
   import TabMenu from 'primevue/tabmenu';
+  // import primevue themes';
+  import 'primevue/resources/themes/bootstrap4-dark-blue/theme.css';
+  import 'primevue/resources/primevue.min.css';
+  import 'primeicons/primeicons.css';
+  import 'primeflex/primeflex.css';
 
 export default {
   data() {

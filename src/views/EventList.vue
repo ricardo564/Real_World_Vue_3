@@ -1,11 +1,11 @@
 <template>
-    <div>
-      <div class="grid col-12 justify-content-center"> 
-        <p>Getter Test: {{ eGetter }} </p>
+    <div class="grid justify-content-center">
+      <div class="grid col-12 md:col-12 justify-content-center"> 
         <h1>Events for {{ user.userInfo.name }}</h1>
       </div>
       <div>
-        <EventCard v-for="event in oEvent" :key="event.id" :event="event" />
+        <EventCard v-for="event in oEvent" :key="event.id" :event="event" >
+        </EventCard>
       </div>
     </div>
 </template>
