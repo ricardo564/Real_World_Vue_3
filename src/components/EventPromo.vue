@@ -5,6 +5,7 @@
         {{ ePopularity }} <i class="pi pi-star mt-1"> </i>
       </Button>
     </div>
+    
   </div>
 </template>
 
@@ -35,7 +36,6 @@ export default {
     },
     handleClick(){
       this.$emit('click')
-      console.log(this.ePopularity)
     }
   },
   components: {
