@@ -9,13 +9,13 @@ const routes = [
   {
     path: '/',
     name: 'EventList',
-    component: EventList
+    component: EventList,
   },
   {
     path: '/event/:id',
     name: 'EventDetails',
     props: true,
-    component: EventDetails
+    component: EventDetails,
   },
   {
     path: '/about',
@@ -25,19 +25,19 @@ const routes = [
   {
     path: '/event/create',
     name: 'EventCreate',
-    component: EventCreate
+    component: EventCreate,
   },
   {
     path: '/error/:error',
     name: 'ErrorDisplay',
     prop: true,
-    component:ErrorDisplay
-  }
+    component: ErrorDisplay,
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 })
 
 export default router

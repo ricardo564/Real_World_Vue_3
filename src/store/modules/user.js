@@ -1,15 +1,15 @@
 export default {
+  namespaced: true,
+  state: {
     namespaced: true,
-    state: {
-        namespaced: true,
-        userInfo: {
-            id:'abc123',
-            name: 'Camillus'
-        }
+    userInfo: {
+      id: 'abc123',
+      name: 'Camillus',
     },
-    getters: {
-        listTodos (state) {
-            return state.userInfo.name;
-        },
+  },
+  getters: {
+    listTodos(state) {
+      return state.userInfo.name
     },
+  },
 }

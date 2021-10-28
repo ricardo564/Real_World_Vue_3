@@ -19,14 +19,10 @@
       <div>
         <h3>Name & describe your event</h3>
         <label>Title</label>
-        <input
-          v-model="event.title"
-          type="text"
-          placeholder="Title"
-        />
+        <input v-model="event.title" type="text" placeholder="Title" />
       </div>
 
-      <div >
+      <div>
         <label>Description</label>
         <textarea
           v-model="event.description"
@@ -40,11 +36,7 @@
         <h3>Where is your event?</h3>
 
         <label>Location</label>
-        <input
-          v-model="event.location"
-          type="text"
-          placeholder="Location"
-        />
+        <input v-model="event.location" type="text" placeholder="Location" />
       </div>
 
       <div>
@@ -54,11 +46,7 @@
 
       <div>
         <label>Time</label>
-        <input
-          v-model="event.time"
-          type="text"
-          placeholder="Time"
-        />
+        <input v-model="event.time" type="text" placeholder="Time" />
       </div>
 
       <button type="submit">Submit</button>

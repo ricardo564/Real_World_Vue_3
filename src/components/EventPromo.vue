@@ -1,11 +1,10 @@
 <template>
   <div>
     <div>
-      <Button @click='handleClick'>
+      <Button @click="handleClick">
         {{ ePopularity }} <i class="pi pi-star mt-1"> </i>
       </Button>
     </div>
-    
   </div>
 </template>
 
@@ -15,18 +14,14 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'EventPromo',
-  emits: [
-    'click'
-  ],
-  props:{
-      ePopularity:{
-          type: null,
-          required: true
-      }
+  emits: ['click'],
+  props: {
+    ePopularity: {
+      type: null,
+      required: true,
+    },
   },
-  computed: mapState([
-    'popularity'
-  ]),
+  computed: mapState(['popularity']),
   watch: {
     ePopularity: 'someActions',
   },
@@ -34,9 +29,9 @@ export default {
     someActions() {
       console.log('someActions watch')
     },
-    handleClick(){
+    handleClick() {
       this.$emit('click')
-    }
+    },
   },
   components: {
     Button,
