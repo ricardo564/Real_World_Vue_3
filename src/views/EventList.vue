@@ -5,7 +5,7 @@
         <h1 class="m-auto">Events for {{ user.userInfo.name }}</h1>
       </div>-->
       <div class="col-12">
-        <CreateEvent userName="Camillus"></CreateEvent>
+        <CreateEvent></CreateEvent>
       </div>
       <div class="m-auto">
         <EventCard v-for="event in oEvent" :key="event.id" :event="event">

@@ -34,103 +34,15 @@
       "popularity": 48
     },
     {
+      "id": "f77a4285-b380-4b10-a12f-f01298f11185",
       "category": "education",
-      "title": "Cobaia 01",
-      "description": "Apresenta sintomas de insonia.",
-      "location": "Perto daAgua",
-      "date": "Toda sexta",
-      "time": "Ao entardecer",
+      "title": "Teste do Pop-up",
+      "description": "Verificar o funcionamento da criação de itens no pop-up para criar novos eventos",
+      "location": null,
+      "date": "29/10/2021",
+      "time": "16:55",
       "organizer": "Camillus",
-      "id": "790",
-      "popularity": 48
-    },
-    {
-      "category": "",
-      "title": "Cobaia 02",
-      "description": "Impulso para gritar",
-      "location": "Em locais publicos",
-      "date": "Todos os dias",
-      "time": "A cada 1 hora",
-      "organizer": "Camillus",
-      "id": "791",
-      "popularity": 15
-    },
-    {
-      "category": "housing",
-      "title": "Cobaia 04",
-      "description": "Coceira no braço, perdeu o braço a 8 abos.",
-      "location": "Perto de estatuas",
-      "date": "Todos os dias.",
-      "time": "Sem hora .",
-      "organizer": "Camillus",
-      "id": "792",
-      "popularity": 1
-    },
-    {
-      "category": "housing",
-      "title": "Cobaia 04",
-      "description": "Coceira no braço, perdeu o braço a 8 abos.",
-      "location": "Perto de estatuas",
-      "date": "Todos os dias.",
-      "time": "Sem hora .",
-      "organizer": "Camillus",
-      "id": "793",
-      "popularity": 1
-    },
-    {
-      "category": "community",
-      "title": "Cobaia 05",
-      "description": "Não consegue se manter acordada.",
-      "location": "Em todos os lugares",
-      "date": "Todos os dias",
-      "time": "Enquanto o Sol está no céu",
-      "organizer": "Camillus",
-      "id": "794",
-      "popularity": 1
-    },
-    {
-      "category": "animal welfare",
-      "title": "Cobaia07",
-      "description": "teste",
-      "location": "teste",
-      "date": "teste",
-      "time": "teste",
-      "organizer": "Camillus",
-      "id": "795",
-      "popularity": 1
-    },
-    {
-      "category": "housing",
-      "title": "Cobaia 08",
-      "description": "teste",
-      "location": "teste",
-      "date": "teste",
-      "time": "teste",
-      "organizer": "Camillus",
-      "id": "796",
-      "popularity": 1
-    },
-    {
-      "id": "3b377d95-1b39-4002-a109-d93c58938b22",
-      "category": "education",
-      "title": "Cobaia 08",
-      "description": "Escreve com palavras faltando.",
-      "location": "Em qualquer lugar que precise escrever",
-      "date": "todos os dias",
-      "time": "Sempre que quer se expressar",
-      "organizer": "Camillus",
-      "popularity": 0
-    },
-    {
-      "id": "a3336b99-88cd-445b-bb04-171473932e1c",
-      "category": "community",
-      "title": "Decordar a Casa",
-      "description": "Decorar tematicamente a casa antes da festa",
-      "location": "Casa",
-      "date": "Na Virada de Ano",
-      "time": "19  horas",
-      "organizer": "Camillus",
-      "popularity": 9
+      "popularity": 4
     }
   ]
 }
