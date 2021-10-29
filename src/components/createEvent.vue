@@ -1,9 +1,18 @@
 <template>
   <form>
-    <div class="w-4 justify-content-center m-auto">
-      <div class="grid h-content text-center border-solid border-1 p-1">
+    <div class="w-22rem h-auto justify-content-center m-auto">
+      <div
+        class="
+          grid
+          text-center
+          border-solid border-1 border-round border-primary
+          p-1
+          surface-50
+        "
+      >
         <div class="col-12 p-0 m-0">
-          <p>Criar Evento</p>
+          <h2 class="p-0 m-0 text-primary">Criar Evento</h2>
+          <Divider class="p-0 m-0" type="solid" />
         </div>
         <div class="col-12 flex p-0 m-0">
           <div class="col-3">
@@ -13,7 +22,7 @@
               size="large"
             />
           </div>
-          <div class="col-3 p-0 m-0">
+          <div class="col-4 p-0 m-0 grid align-content-start">
             <span>{{ userName }}</span>
             <select class="w-full inputfield">
               <option>Publico</option>
@@ -24,17 +33,24 @@
         </div>
         <div class="col-12">
           <Textarea
-            class="w-12"
+            class="w-12 border-none surface-50"
             v-model="value"
             :autoResize="true"
             rows="5"
-            cols="30"
+            placeholder="Descreva seu evento"
           />
         </div>
-        <div class="col-12 p-0 m-0">
-          <p>Criar Evento</p>
+        <div class="col-12">
+          <div>
+            <div>
+              <p>Adicionar a seu Evento</p>
+            </div>
+          </div>
         </div>
-        <Button class="col-12 text-center">Publicar</Button>
+        <Button
+          label="Publicar"
+          class="col-12 text-center p-button-successes p-button-raised"
+        />
       </div>
     </div>
   </form>
@@ -43,6 +59,8 @@
 <script>
 import Avatar from 'primevue/avatar'
 import Textarea from 'primevue/textarea'
+import Button from 'primevue/button'
+import Divider from 'primevue/divider'
 
 export default {
   name: 'CreateEvent',
@@ -52,6 +70,8 @@ export default {
   components: {
     Avatar,
     Textarea,
+    Button,
+    Divider,
   },
 }
 </script>

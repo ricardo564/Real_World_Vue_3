@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="grid justify-content-center">
-      <div class="grid col-12 md:col-12 justify-content-center">
-        <h1>Events for {{ user.userInfo.name }}</h1>
+    <div class="grid">
+      <div class="grid col-12 md:col-12">
+        <h1 class="m-auto">Events for {{ user.userInfo.name }}</h1>
       </div>
       <div class="col-12">
         <CreateEvent userName="Camillus"></CreateEvent>
-    </div>
-      <div>
+      </div>
+      <div class="m-auto">
         <EventCard v-for="event in oEvent" :key="event.id" :event="event">
         </EventCard>
       </div>

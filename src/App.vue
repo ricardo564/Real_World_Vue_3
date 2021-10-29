@@ -1,6 +1,6 @@
 <template>
-  <div class="grid justify-content-center m-1">
-    <TabMenu :model="items" />
+  <div>
+    <TabMenu class="m-auto w-min p-2" :model="items" />
   </div>
   <router-view />
 </template>
