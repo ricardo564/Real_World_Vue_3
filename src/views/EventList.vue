@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="grid">
-      <div class="grid col-12 md:col-12">
+      <!--<div class="grid col-12 md:col-12">
         <h1 class="m-auto">Events for {{ user.userInfo.name }}</h1>
-      </div>
+      </div>-->
       <div class="col-12">
         <CreateEvent userName="Camillus"></CreateEvent>
       </div>

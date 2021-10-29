@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TabMenu class="m-auto w-min p-2" :model="items" />
+    <TabMenu class="m-auto w-min p-2 mb-3" :model="items" />
   </div>
   <router-view />
 </template>
@@ -19,7 +19,7 @@ export default {
       items: [
         { label: 'Events', icon: 'pi pi-fw pi-home', to: '/' },
         { label: 'About', icon: 'pi pi-fw pi-file', to: '/about' },
-        { label: 'Create', icon: 'pi pi-fw pi-calendar', to: '/event/create' },
+        // { label: 'Create', icon: 'pi pi-fw pi-calendar', to: '/event/create' }, //
       ],
     }
   },
