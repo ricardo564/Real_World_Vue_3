@@ -8,8 +8,14 @@
         <CreateEvent></CreateEvent>
       </div>
       <div class="m-auto">
-        <EventCard v-for="event in oEvent" :key="event.id" :event="event">
-        </EventCard>
+        <router-link
+          class="no-underline"
+          :to="{ name: 'EventDetails', params: { id: event.id } }"
+          v-for="event in oEvent"
+          :key="event.id"
+        >
+          <EventCard :event="event"> </EventCard>
+        </router-link>
       </div>
     </div>
   </div>

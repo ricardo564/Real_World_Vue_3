@@ -6,17 +6,13 @@
     :class="{ 'bg-primary': hover }"
   >
     <div class="col-9 m-1">
-      <router-link
-        class="no-underline"
-        :to="{ name: 'EventDetails', params: { id: event.id } }"
-      >
         <Card>
           <template #title>{{ event.title }}</template>
           <template #content>
             <span>@{{ event.time }} on {{ event.date }}</span>
           </template>
         </Card>
-      </router-link>
+
     </div>
     <div class="col-1">
       <EventPromo

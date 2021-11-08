@@ -15,9 +15,11 @@
   <div>
     <Dialog
       class="border-solid border-1 border-round border-primary surface-50"
-      header="Criar Evento"
       v-model:visible="displayDialog"
     >
+    <template #header>
+		<h3>Criar Evento</h3>
+	</template>
       <form @submit.prevent="onSubmit">
         <div class="w-20rem h-auto justify-content-center m-auto">
           <div class="grid text-center p-1">
@@ -97,6 +99,7 @@
                     {{ option }}
                   </option>
                 </select>
+                <FileUpload name="demo[]" url="./upload" :multiple="true" :fileLimit="1"/>
               </div>
             </div>
             <Button
@@ -123,6 +126,7 @@ import Dialog from 'primevue/dialog'
 import Tooltip from 'primevue/tooltip'
 import { v4 as uuidv4 } from 'uuid'
 import { mapState, mapActions } from 'vuex'
+import FileUpload from 'primevue/fileupload';
 
 export default {
   name: 'CreateEvent',
@@ -163,6 +167,7 @@ export default {
     Button,
     Divider,
     Dialog,
+    FileUpload
   },
   methods: {
     ...mapActions('event', ['createEvent']),
