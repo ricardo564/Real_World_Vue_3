@@ -6,13 +6,12 @@
     :class="{ 'bg-primary': hover }"
   >
     <div class="col-9 m-1">
-        <Card>
-          <template #title>{{ event.title }}</template>
-          <template #content>
-            <span>@{{ event.time }} on {{ event.date }}</span>
-          </template>
-        </Card>
-
+      <Card>
+        <template #title>{{ event.title }}</template>
+        <template #content>
+          <span>@{{ event.time }} on {{ event.date }}</span>
+        </template>
+      </Card>
     </div>
     <div class="col-1">
       <EventPromo

@@ -4,6 +4,7 @@ export default {
   namespaced: true,
   state: {
     events: [],
+    totalEvents: 0,
     currentEvent: {},
   },
   mutations: {
@@ -15,6 +16,9 @@ export default {
     },
     SET_EVENTS(state, events) {
       state.events = events
+    },
+    SET_TOTAL_EVENTS(state, totalEvents){
+      state.totalEvents = totalEvents
     },
     VOTE_EVENT(state, event) {
       event.popularity += 1
@@ -35,10 +39,11 @@ export default {
           throw error
         })
     },
-    fetchEvents({ commit }) {
-      return EventService.getEvents()
+    fetchEvents({ commit }, params) {
+      return EventService.getEvents({ params })
         .then((response) => {
           commit('SET_EVENTS', response.data)
+          commit('SET_TOTAL_EVENTS', response.headers['x-total-count'])
         })
         .catch((error) => {
           throw error

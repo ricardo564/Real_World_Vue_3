@@ -9,7 +9,7 @@
       "date": "January 28, 2022",
       "time": "12:00",
       "organizer": "Kat Laydee",
-      "popularity": 65
+      "popularity": 0
     },
     {
       "id": "456",
@@ -20,7 +20,7 @@
       "date": "March 14, 2022",
       "time": "10:00",
       "organizer": "Fern Pollin",
-      "popularity": 49
+      "popularity": 0
     },
     {
       "id": "789",
@@ -31,18 +31,62 @@
       "date": "July 22, 2022",
       "time": "11:00",
       "organizer": "Carey Wales",
-      "popularity": 48
+      "popularity": 1
     },
     {
       "id": "f77a4285-b380-4b10-a12f-f01298f11185",
       "category": "education",
       "title": "Teste do Pop-up",
       "description": "Verificar o funcionamento da criação de itens no pop-up para criar novos eventos",
-      "location": null,
+      "location": "Playa Del Carmen",
       "date": "29/10/2021",
       "time": "16:55",
       "organizer": "Camillus",
-      "popularity": 9
+      "popularity": 0
+    },
+    {
+      "id": "123234",
+      "category": "animal welfare",
+      "title": "Cat Adoption Day",
+      "description": "Find your new feline friend at this event.",
+      "location": "Meow Town",
+      "date": "January 28, 2022",
+      "time": "12:00",
+      "organizer": "Kat Laydee",
+      "popularity": 0
+    },
+    {
+      "id": "4542246",
+      "category": "food",
+      "title": "Community Gardening",
+      "description": "Join us as we tend to the community edible plants.",
+      "location": "Flora City",
+      "date": "March 14, 2022",
+      "time": "10:00",
+      "organizer": "Fern Pollin",
+      "popularity": 0
+    },
+    {
+      "id": "784329",
+      "category": "sustainability",
+      "title": "Beach Cleanup",
+      "description": "Help pick up trash along the shore.",
+      "location": "Playa Del Carmen",
+      "date": "July 22, 2022",
+      "time": "11:00",
+      "organizer": "Carey Wales",
+      "popularity": 1
+    },
+    {
+      "id": "f77a4285-b380-4b10-a12f-f03498f11185",
+      "category": "education",
+      "title": "Teste do Pop-up",
+      "description": "Verificar o funcionamento da criação de itens no pop-up para criar novos eventos",
+      "location": "Playa Del Carmen",
+      "date": "29/10/2021",
+      "time": "16:55",
+      "organizer": "Camillus",
+      "popularity": 0
     }
   ]
 }

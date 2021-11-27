@@ -1,10 +1,6 @@
 <template>
-  <div class="grid justify-content-center">
-    <Avatar
-      image="https://scontent.fbau3-2.fna.fbcdn.net/v/t1.6435-1/cp0/p50x50/242290915_4337883762964775_7725610008623161220_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeGYBkpzki1v_G_6Nmpf4wrCpVpomE1jSE2lWmiYTWNITd-MZ_lOdufOsf73JC5XsPCKUuEKMCPufC7q_qPunevI&_nc_ohc=263YlN0RuYQAX-NCE-z&_nc_ht=scontent.fbau3-2.fna&oh=51a92a061b474d68fa094a7f35687904&oe=619EFE5A"
-      shape="circle"
-      size="large"
-    />
+  <div v-if="!displayDialog" class="grid justify-content-center">
+    <Avatar :image="userImage" shape="circle" size="large" />
 
     <input
       class="border-round border-0"
@@ -16,29 +12,21 @@
     <Dialog
       class="border-solid border-1 border-round border-primary surface-50"
       v-model:visible="displayDialog"
+      :modal="true"
     >
-    <template #header>
-		<h3>Criar Evento</h3>
-	</template>
+      <template #header>
+        <h3>Criar Evento</h3>
+      </template>
       <form @submit.prevent="onSubmit">
         <div class="w-20rem h-auto justify-content-center m-auto">
           <div class="grid text-center p-1">
             <div class="col-12 p-0 m-0"></div>
             <div class="col-12 flex p-0 m-0">
               <div class="col-3">
-                <Avatar
-                  image="https://scontent.fbau3-2.fna.fbcdn.net/v/t1.6435-1/cp0/p50x50/242290915_4337883762964775_7725610008623161220_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeGYBkpzki1v_G_6Nmpf4wrCpVpomE1jSE2lWmiYTWNITd-MZ_lOdufOsf73JC5XsPCKUuEKMCPufC7q_qPunevI&_nc_ohc=263YlN0RuYQAX-NCE-z&_nc_ht=scontent.fbau3-2.fna&oh=51a92a061b474d68fa094a7f35687904&oe=619EFE5A"
-                  shape="circle"
-                  size="large"
-                />
+                <Avatar :image="userImage" shape="circle" size="large" />
               </div>
               <div class="col-4 p-0 m-0 grid align-content-start">
                 <span>{{ this.$store.state.user.userInfo.name }}</span>
-                <!--<select class="w-full inputfield">
-                <option>Publico</option>
-                <option>Apenas amigos</option>
-                <option>Privado</option>
-              </select>-->
               </div>
             </div>
             <div class="col-12">
@@ -48,6 +36,7 @@
                 :autoResize="true"
                 rows="3"
                 placeholder="Descricação do evento"
+                autofocus
               ></Textarea>
             </div>
             <div class="col-12 border-1 border-round border-primary m-1">
@@ -99,7 +88,12 @@
                     {{ option }}
                   </option>
                 </select>
-                <FileUpload name="demo[]" url="./upload" :multiple="true" :fileLimit="1"/>
+                <FileUpload
+                  name="demo[]"
+                  url="./upload"
+                  :multiple="true"
+                  :fileLimit="1"
+                />
               </div>
             </div>
             <Button
@@ -126,7 +120,7 @@ import Dialog from 'primevue/dialog'
 import Tooltip from 'primevue/tooltip'
 import { v4 as uuidv4 } from 'uuid'
 import { mapState, mapActions } from 'vuex'
-import FileUpload from 'primevue/fileupload';
+import FileUpload from 'primevue/fileupload'
 
 export default {
   name: 'CreateEvent',
@@ -136,6 +130,8 @@ export default {
   data() {
     return {
       displayDialog: false,
+      userImage:
+        'https://pm1.narvii.com/6043/c50a9419f068068cc458986b81be78ead4b31f6e_128.jpg',
       categories: [
         'sustainability',
         'nature',
@@ -167,7 +163,7 @@ export default {
     Button,
     Divider,
     Dialog,
-    FileUpload
+    FileUpload,
   },
   methods: {
     ...mapActions('event', ['createEvent']),
