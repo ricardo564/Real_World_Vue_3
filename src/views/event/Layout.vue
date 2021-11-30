@@ -1,18 +1,18 @@
 <template>
   <childCard>
     <template #title>
-      <h1>{{ event.currentEvent.title }}</h1>
+      <h1>{{ event.title }}</h1>
+      <div id="nav">
+        <router-link :to="{ name: 'EventDetails' }">Details</router-link>
+        |
+        <router-link :to="{ name: 'EventRegister' }">Register</router-link>
+        |
+        <router-link :to="{ name: 'EventEdit' }">Edit</router-link>
+      </div>
     </template>
 
     <template #content>
-      <p>{{ event.currentEvent.description }}</p>
-    </template>
-    <template #footer>
-      <div>
-        <span>{{ event.currentEvent.time }} </span>
-        <span>on {{ event.currentEvent.date }} </span>
-        <span> @ {{ event.currentEvent.location }} </span>
-      </div>
+      <router-view :event="event" />
     </template>
   </childCard>
 </template>
@@ -35,7 +35,7 @@ export default {
     })
   },
   computed: {
-    ...mapState(['event']),
+    ...mapState('event', ['events', 'event']),
   },
   methods: {
     ...mapActions('event', ['fetchEvent']),

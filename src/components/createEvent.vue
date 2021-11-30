@@ -1,12 +1,30 @@
 <template>
   <div v-if="!displayDialog" class="grid justify-content-center">
-    <Avatar :image="userImage" shape="circle" size="large" />
-
-    <input
-      class="border-round border-0"
-      type="text"
-      @click="displayDialog = true"
-    />
+    <div id="onlineStatus">
+      <div class="relative">
+        <div class="absolute">
+          <Avatar :image="userImage" shape="circle" size="xlarge" />
+        </div>
+        <span
+          class="
+            border-circle border-2 border-white
+            inline-block
+            h-2rem
+            w-2rem
+            absolute
+            mt-6
+          "
+          :class="isOnline"
+        />
+      </div>
+    </div>
+    <div>
+      <input
+        class="border-round border-0"
+        type="text"
+        @click="displayDialog = true"
+      />
+    </div>
   </div>
   <div>
     <Dialog
@@ -15,12 +33,11 @@
       :modal="true"
     >
       <template #header>
-        <h3>Criar Evento</h3>
+        <h3 class="mx-auto">Criar Evento</h3>
       </template>
       <form @submit.prevent="onSubmit">
         <div class="w-20rem h-auto justify-content-center m-auto">
           <div class="grid text-center p-1">
-            <div class="col-12 p-0 m-0"></div>
             <div class="col-12 flex p-0 m-0">
               <div class="col-3">
                 <Avatar :image="userImage" shape="circle" size="large" />
@@ -39,68 +56,70 @@
                 autofocus
               ></Textarea>
             </div>
-            <div class="col-12 border-1 border-round border-primary m-1">
-              <div class="flex text-black-alpha-90">
-                <p>Adicionar ao evento</p>
+            <div class="col-12 m-1">
+              <div>
+                <div class="grid grid-nogutter text-black-alpha-90">
+                  <p class="mx-auto">Adicionar ao evento</p>
+                </div>
+                <div class="grid w-full">
+                  <div class="col-12 w-max mx-auto">
+                    <i
+                      v-tooltip="'Nome do vento'"
+                      class="col pi pi-pencil cursor-pointer"
+                    ></i>
+                    <input
+                      type="text"
+                      v-model="event.title"
+                      placeholder="Nome do Evento"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <i
+                      v-tooltip="'Dia do evento'"
+                      class="col pi pi-calendar cursor-pointer"
+                    ></i>
+                    <input
+                      type="text"
+                      v-model="event.date"
+                      placeholder="Dia do evento"
+                    />
+                  </div>
+
+                  <div class="col-12">
+                    <i
+                      v-tooltip="'Hora do evento'"
+                      class="col pi pi-clock cursor-pointer"
+                    ></i>
+                    <input
+                      type="text"
+                      v-model="event.time"
+                      placeholder="Hora do evento"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <i
+                      v-tooltip="'Categoria do evento'"
+                      class="col pi pi-list cursor-pointer"
+                    ></i>
+                    <select v-model="event.category">
+                      <option
+                        v-for="option in categories"
+                        :value="option"
+                        :key="option"
+                        :selected="option === event.category"
+                      >
+                        {{ option }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <div class="grid">
-                <i
-                  v-tooltip="'Nome do vento'"
-                  class="col pi pi-pencil cursor-pointer"
-                ></i
-                ><input
-                  type="text"
-                  v-model="event.title"
-                  placeholder="Nome do Evento"
-                />
-
-                <i
-                  v-tooltip="'Dia do evento'"
-                  class="col pi pi-calendar cursor-pointer"
-                ></i>
-                <input
-                  type="text"
-                  v-model="event.date"
-                  placeholder="Dia do evento"
-                />
-
-                <i
-                  v-tooltip="'Hora do evento'"
-                  class="col pi pi-clock cursor-pointer"
-                ></i>
-                <input
-                  type="text"
-                  v-model="event.time"
-                  placeholder="Hora do evento"
-                />
-
-                <i
-                  v-tooltip="'Categoria do evento'"
-                  class="col pi pi-list cursor-pointer"
-                ></i>
-                <select v-model="event.category">
-                  <option
-                    v-for="option in categories"
-                    :value="option"
-                    :key="option"
-                    :selected="option === event.category"
-                  >
-                    {{ option }}
-                  </option>
-                </select>
-                <FileUpload
-                  name="demo[]"
-                  url="./upload"
-                  :multiple="true"
-                  :fileLimit="1"
-                />
-              </div>
+              <Button
+                type="submit"
+                label="Publicar"
+                class="col-12 text-center p-button-successes p-button-raised"
+              />
             </div>
-            <Button
-              type="submit"
-              label="Publicar"
-              class="col-12 text-center p-button-successes p-button-raised"
-            />
           </div>
         </div>
       </form>
@@ -120,18 +139,15 @@ import Dialog from 'primevue/dialog'
 import Tooltip from 'primevue/tooltip'
 import { v4 as uuidv4 } from 'uuid'
 import { mapState, mapActions } from 'vuex'
-import FileUpload from 'primevue/fileupload'
 
 export default {
   name: 'CreateEvent',
-  props: {
-    userName: String,
-  },
   data() {
     return {
       displayDialog: false,
       userImage:
         'https://pm1.narvii.com/6043/c50a9419f068068cc458986b81be78ead4b31f6e_128.jpg',
+      online: true,
       categories: [
         'sustainability',
         'nature',
@@ -163,7 +179,6 @@ export default {
     Button,
     Divider,
     Dialog,
-    FileUpload,
   },
   methods: {
     ...mapActions('event', ['createEvent']),
@@ -189,7 +204,19 @@ export default {
     },
   },
   computed: {
-    ...mapState(['user']),
+    ...mapState(['user', ['userInfo', 'status']]),
+
+    isOnline() {
+      if (this.online) {
+        return 'dot bg-green-500'
+      }
+      return 'dot surface-200'
+    },
   },
 }
 </script>
+<style scoped>
+#onlineStatus Avatar {
+  position: relative;
+}
+</style>

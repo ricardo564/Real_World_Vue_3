@@ -3,6 +3,7 @@ import EventService from '@/services/EventService.js'
 export default {
   namespaced: true,
   state: {
+    event: [],
     events: [],
     totalEvents: 0,
     currentEvent: {},
@@ -12,12 +13,14 @@ export default {
       state.events.push(event)
     },
     SET_EVENT(state, event) {
-      state.currentEvent = event
+      console.log('set_event_start: ', event)
+      state.event = event
+      console.log('set_event:', state.event)
     },
     SET_EVENTS(state, events) {
       state.events = events
     },
-    SET_TOTAL_EVENTS(state, totalEvents){
+    SET_TOTAL_EVENTS(state, totalEvents) {
       state.totalEvents = totalEvents
     },
     VOTE_EVENT(state, event) {

@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div>
-      <Button @click="handleClick">
-        {{ ePopularity }} <i class="pi pi-star mt-1"> </i>
-      </Button>
-    </div>
+    <Button @click="handleClick">
+      {{ ePopularity }} <i class="pi pi-star mt-1"> </i>
+    </Button>
   </div>
 </template>
 

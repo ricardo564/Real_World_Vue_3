@@ -6,6 +6,7 @@ export default {
       id: 'abc123',
       name: 'Camillus',
     },
+    online: true,
   },
   getters: {
     listTodos(state) {

@@ -10,17 +10,18 @@
       <div class="m-auto">
         <router-link
           class="no-underline"
-          :to="{ name: 'EventDetails', params: { id: event.id } }"
+          :to="{ name: 'EventLayout', params: { id: event.id } }"
           v-for="event in orderedEvents"
           :key="event.id"
         >
           <EventCard :event="event"> </EventCard>
         </router-link>
       </div>
+
       <div class="col-12 grid justify-content-center mx-auto">
         <div class="mx-auto">
           <router-link
-            class="col"
+            class="col no-underline"
             :to="{ name: 'EventList', query: { page: page - 1 } }"
             rel="prev"
             v-if="page != 1"
@@ -28,7 +29,7 @@
             &#60; Prev Page
           </router-link>
           <router-link
-            class="col"
+            class="col no-underline"
             :to="{ name: 'EventList', query: { page: page + 1 } }"
             rel="next"
             v-if="hasNextPage"
