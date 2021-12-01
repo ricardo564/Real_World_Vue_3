@@ -1,7 +1,7 @@
 <template>
   <div class="grid justify-content-center">
     <div class="col-12 md:col-6">
-      <Card>
+      <PrimeCard>
         <template #header>
           <div>
             <slot name="header"></slot>
@@ -27,16 +27,16 @@
             <slot name="footer"></slot>
           </div>
         </template>
-      </Card>
+      </PrimeCard>
     </div>
   </div>
 </template>
 
 <script>
-import Card from 'primevue/card'
+import PrimeCard from 'primevue/card'
 export default {
   components: {
-    Card,
+    PrimeCard,
   },
 }
 </script>
