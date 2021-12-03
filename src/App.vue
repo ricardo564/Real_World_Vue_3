@@ -1,4 +1,7 @@
 <template>
+  <div v-if="GStore.flashMessage">
+    {{ GStore.flashMessage }}
+  </div>
   <div>
     <TabMenu class="m-auto w-min p-2 mb-3" :model="items" />
   </div>
@@ -14,6 +17,7 @@ import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css'
 
 export default {
+  inject: ['GStore'],
   data() {
     return {
       items: [
