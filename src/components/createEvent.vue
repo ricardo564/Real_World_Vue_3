@@ -195,10 +195,10 @@ export default {
             params: { id: event.id },
           })
         })
-        .catch((error) => {
+        .catch(() => {
           this.$router.push({
-            name: 'ErrorDisplay',
-            params: { error: error },
+            name: 'NetworkError',
+            /*params: { error: error },*/
           })
         })
     },

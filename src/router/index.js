@@ -7,6 +7,7 @@ import EventRegister from '../views/event/Register.vue'
 import About from '../views/About.vue'
 import ErrorDisplay from '../views/ErrorDisplay.vue'
 import NotFound from '@/views/event/NotFound.vue'
+import NetworkError from "@/views/NetworkError.vue"
 
 const routes = [
   {
@@ -61,10 +62,15 @@ const routes = [
     component: NotFound,
   },
   {
-    path: '/404/:resource',
+    path: '/404/:resource', 
     name: '404Resource',
     component: NotFound,
     props: true,
+  },
+  {
+    path: '/network-error',
+    name: 'NetworkError',
+    component: NetworkError,
   },
 ]
 
