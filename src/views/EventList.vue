@@ -47,7 +47,6 @@ import EventCard from '@/components/EventCard.vue'
 import { mapState, mapActions } from 'vuex'
 import { watchEffect } from 'vue'
 import CreateEvent from '@/components/createEvent.vue'
-import NProgress from 'nprogress'
 
 export default {
   name: 'EventList',
@@ -58,15 +57,12 @@ export default {
   },
   created() {
     watchEffect(() => {
-      NProgress.start()
       this.events = null
       const params = {
         perPage: 2,
         page: this.page,
       }
-      this.fetchEvents(params).finally(() => {
-        NProgress.done()
-      })
+      return this.fetchEvents(params)
     })
   },
   computed: {

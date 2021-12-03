@@ -7,7 +7,8 @@ import EventRegister from '../views/event/Register.vue'
 import About from '../views/About.vue'
 import ErrorDisplay from '../views/ErrorDisplay.vue'
 import NotFound from '@/views/event/NotFound.vue'
-import NetworkError from "@/views/NetworkError.vue"
+import NetworkError from '@/views/NetworkError.vue'
+import NProgress from 'nprogress'
 
 const routes = [
   {
@@ -62,7 +63,7 @@ const routes = [
     component: NotFound,
   },
   {
-    path: '/404/:resource', 
+    path: '/404/:resource',
     name: '404Resource',
     component: NotFound,
     props: true,
@@ -79,4 +80,11 @@ const router = createRouter({
   routes,
 })
 
+router.beforeEach(() => {
+  NProgress.start()
+})
+
+router.afterEach(() =>{ 
+  NProgress.done()
+})
 export default router
