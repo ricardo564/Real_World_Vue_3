@@ -39,7 +39,12 @@ export default {
           commit('ADD_EVENT', event)
         })
         .catch((error) => {
-          throw error
+          console.log(error)
+
+          this.$router.push({
+            name: '404Resource',
+            params: { resource: 'event' },
+          })
         })
     },
     fetchEvents({ commit }, params) {
