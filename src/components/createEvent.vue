@@ -1,30 +1,11 @@
 <template>
   <div v-if="!displayDialog" class="grid justify-content-center">
-    <div id="onlineStatus">
-      <div class="relative">
-        <div class="absolute">
-          <Avatar :image="userImage" shape="circle" size="xlarge" />
-        </div>
-        <span
-          class="
-            border-circle border-2 border-white
-            inline-block
-            h-2rem
-            w-2rem
-            absolute
-            mt-6
-          "
-          :class="isOnline"
-        />
-      </div>
-    </div>
-    <div>
-      <input
-        class="border-round border-0"
-        type="text"
-        @click="displayDialog = true"
-      />
-    </div>
+    <InputText
+      class="border-round text-center h-2rem"
+      type="text"
+      placeholder="Crie um novomento clicando aqui."
+      @click="displayDialog = true"
+    />
   </div>
   <div>
     <Dialog
@@ -126,19 +107,20 @@
     </Dialog>
   </div>
 
-  <Divider></Divider>
+  <Divider />
 </template>
 
 <script>
-import Avatar from 'primevue/avatar'
+import { v4 as uuidv4 } from 'uuid'
+import { mapState, mapActions } from 'vuex'
 import Textarea from 'primevue/textarea'
 import Button from 'primevue/button'
 import Divider from 'primevue/divider'
-import 'primeicons/primeicons.css'
 import Dialog from 'primevue/dialog'
 import Tooltip from 'primevue/tooltip'
-import { v4 as uuidv4 } from 'uuid'
-import { mapState, mapActions } from 'vuex'
+import InputText from '@/components/InputText'
+
+import 'primeicons/primeicons.css'
 
 export default {
   name: 'CreateEvent',
@@ -174,11 +156,11 @@ export default {
     tooltip: Tooltip,
   },
   components: {
-    Avatar,
     Textarea,
     Button,
     Divider,
     Dialog,
+    InputText,
   },
   methods: {
     ...mapActions('event', ['createEvent']),

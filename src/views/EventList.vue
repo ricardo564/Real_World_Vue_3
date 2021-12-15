@@ -1,13 +1,10 @@
 <template>
   <div>
     <div class="grid">
-      <!--<div class="grid col-12 md:col-12">
-        <h1 class="m-auto">Events for {{ user.userInfo.name }}</h1>
-      </div>-->
       <div class="col-12">
         <CreateEvent />
       </div>
-      <div class="m-auto">
+      <div class="mx-auto">
         <router-link
           class="no-underline"
           :to="{ name: 'EventLayout', params: { id: event.id } }"
@@ -16,26 +13,27 @@
         >
           <EventCard :event="event"> </EventCard>
         </router-link>
-      </div>
-
-      <div class="col-12 grid justify-content-center mx-auto">
-        <div class="mx-auto">
-          <router-link
-            class="col no-underline"
-            :to="{ name: 'EventList', query: { page: page - 1 } }"
-            rel="prev"
-            v-if="page != 1"
-          >
-            &#60; Prev Page
-          </router-link>
-          <router-link
-            class="col no-underline"
-            :to="{ name: 'EventList', query: { page: page + 1 } }"
-            rel="next"
-            v-if="hasNextPage"
-          >
-            Next Page &#62;
-          </router-link>
+        <div class="mt-2 mx-auto flex grid-nogutter p-2">
+          <div class="col-6">
+            <router-link
+              class="col no-underline"
+              :to="{ name: 'EventList', query: { page: page - 1 } }"
+              rel="prev"
+              v-if="page != 1"
+            >
+              <Button> &#60; Prev Page </Button>
+            </router-link>
+          </div>
+          <div class="col-6 text-right">
+            <router-link
+              class="col no-underline"
+              :to="{ name: 'EventList', query: { page: page + 1 } }"
+              rel="next"
+              v-if="hasNextPage"
+            >
+              <Button>Next Page &#62;</Button>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -47,6 +45,7 @@ import EventCard from '@/components/EventCard.vue'
 import { mapState, mapActions } from 'vuex'
 import { watchEffect } from 'vue'
 import CreateEvent from '@/components/createEvent.vue'
+import Button from '@/components/Button'
 
 export default {
   name: 'EventList',
@@ -54,6 +53,7 @@ export default {
   components: {
     EventCard,
     CreateEvent,
+    Button,
   },
   created() {
     watchEffect(() => {
