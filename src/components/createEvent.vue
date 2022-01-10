@@ -17,41 +17,41 @@
         <h3 class="mx-auto">Criar Evento</h3>
       </template>
       <form @submit.prevent="onSubmit">
-        <div class="w-20rem h-auto justify-content-center m-auto">
-          <div class="grid text-center p-1">
-            <div class="col-12 flex p-0 m-0">
-              <div class="col-3">
+        <div class="">
+          <div class="">
+            <div class="">
+              <div class="">
                 <Avatar :image="userImage" shape="circle" size="large" />
               </div>
-              <div class="col-4 p-0 m-0 grid align-content-start">
+              <div class="">
                 <span>{{ this.$store.state.user.userInfo.name }}</span>
               </div>
             </div>
-            <div class="col-12">
+            <div class="">
               <Textarea
                 v-model="event.description"
-                class="w-12 border-none"
+                class=""
                 :autoResize="true"
                 rows="3"
                 placeholder="Descricação do evento"
                 autofocus
               ></Textarea>
             </div>
-            <div class="col-12 m-1">
+            <div class="">
               <div>
-                <div class="grid grid-nogutter text-black-alpha-90">
+                <div class="">
                   <p class="mx-auto">Adicionar ao evento</p>
                 </div>
-                <div class="grid w-full">
-                  <div class="col-12 w-max mx-auto">
+                <div class="">
+                  <div class="">
                     <i
                       v-tooltip="'Nome do vento'"
                       class="col pi pi-pencil cursor-pointer"
                     ></i>
-                    <input
+                    <BaseInput
                       type="text"
                       v-model="event.title"
-                      placeholder="Nome do Evento"
+                      label="Nome do Evento"
                     />
                   </div>
                   <div class="col-12">
@@ -59,47 +59,38 @@
                       v-tooltip="'Dia do evento'"
                       class="col pi pi-calendar cursor-pointer"
                     ></i>
-                    <input
+                    <BaseInput
                       type="text"
                       v-model="event.date"
-                      placeholder="Dia do evento"
+                      label="Dia do evento"
                     />
                   </div>
 
-                  <div class="col-12">
+                  <div class="">
                     <i
                       v-tooltip="'Hora do evento'"
                       class="col pi pi-clock cursor-pointer"
                     ></i>
-                    <input
+                    <BaseInput
                       type="text"
                       v-model="event.time"
-                      placeholder="Hora do evento"
+                      label="Hora do evento"
                     />
                   </div>
-                  <div class="col-12">
+                  <div class="">
                     <i
                       v-tooltip="'Categoria do evento'"
                       class="col pi pi-list cursor-pointer"
                     ></i>
-                    <select v-model="event.category">
-                      <option
-                        v-for="option in categories"
-                        :value="option"
-                        :key="option"
-                        :selected="option === event.category"
-                      >
-                        {{ option }}
-                      </option>
-                    </select>
+                    <BaseSelect
+                      :options="categories"
+                      v-model="event.category"
+                      label="Select a category"
+                    />
                   </div>
                 </div>
               </div>
-              <Button
-                type="submit"
-                label="Publicar"
-                class="col-12 text-center p-button-successes p-button-raised"
-              />
+              <Button type="submit" label="Publicar" class="" />
             </div>
           </div>
         </div>
@@ -119,6 +110,8 @@ import Divider from 'primevue/divider'
 import Dialog from 'primevue/dialog'
 import Tooltip from 'primevue/tooltip'
 import InputText from '@/components/InputText'
+import BaseInput from '@/components/BaseInput'
+import BaseSelect from '@/components/BaseSelect'
 
 import 'primeicons/primeicons.css'
 
@@ -161,6 +154,8 @@ export default {
     Divider,
     Dialog,
     InputText,
+    BaseInput,
+    BaseSelect,
   },
   methods: {
     ...mapActions('event', ['createEvent']),
